@@ -1,17 +1,36 @@
-print("This program will calculate your wages, salary, untaxed income, occupational payout, earnings:")
+print("This program will calculate your weekly earnings ")
+print("Salary, untaxed income, occupational payout or earnings")
 
 #Calculate pay
-def calculate_pay(hours,rate):
-      hours = Getting_the_things(hours)
-      rate = Getting_the_things(rate)
+def calculate_pay():
+    hours, rate = Getting_the_things()
+    total = calculate_total_pay(hours, rate)
+    return total
 
+#Input the number of hours worked in a week and hourly rate
+      
+def Getting_the_things():
+     hours = int(input("Your Hours: "))
+     rate = int(input("Hourly Rate: "))
+     return hours, rate
 
-#Get rate and hours
-def Getting_the_things(hours,rate):
-      hours = int(input("Your Hours: "))
-      rate = int(input("Hourly Rate: "))
-      return hours, rate
+#Calculate basic pay
 
+def calculate_basic_pay(hours,rate):
+     total = hours * rate
+     return total
+
+      
+#Overtime pay for anything over 40 hours 
+
+def calculate_overtime_pay(hours,rate):
+     print(hours)
+     print(rate)
+     overtime_hours = hours - 40
+     basic_pay = 40 * rate
+     total = rate * overtime_hours * 1.5
+     return total
+    
 
 #Calculate total pay
 
@@ -23,23 +42,7 @@ def calculate_total_pay(hours,rate):
       return total
 
 
-#Calculate basic pay
-
-def calculate_basic_pay(hours,rate):
-      total = hours * rate
-      return total
-
-
-#Overtime pay
-
-def calculate_overtime_pay(hours,rate):
-      overtime_hours = hours - 40
-      basic_pay = 40 * rate
-      total = rate * overtime_hours * 1.5
-      return total, hours, rate
-
       
-total  = hours * rate
-#main program - display total pay
-def display_total_pay(total):
-      print("£{0}".format(total))
+#display total pay
+def calculate_pay(total):
+    
