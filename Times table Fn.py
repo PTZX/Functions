@@ -13,7 +13,7 @@ def get_questions():
     return timesTable
 
 
-#
+#Generating Questions
 def questions(timesTable):
     
     for q in range(1,16):
@@ -32,3 +32,5 @@ def verdict(userAnswer, answer):
     else:
         print('Sorry, you got the answer wrong. The correct answer is',Ans)
         print()
+
+timesTable = get_questions()
