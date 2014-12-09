@@ -12,19 +12,7 @@ def get_questions():
     timesTable = int(timesTable)
     return timesTable
 
-
-#Generating Questions
-def questions(timesTable):
-    
-    for q in range(1,16):
-        num1 = get_questions(timesTable)
-        num2 = random.randrange(2,13)
-        answer = num1 * num2
-        userAnswer = input(str(num1) + 'x' + str(num2) + " = ")
-    return answer, userAnswer
-
-
-#
+#It the inout correct
 def verdict(userAnswer, answer):
     if UserAnswer == answer:
         print('Well done, you got the correct answer!')
@@ -33,4 +21,19 @@ def verdict(userAnswer, answer):
         print('Sorry, you got the answer wrong. The correct answer is',Ans)
         print()
 
-timesTable = get_questions()
+#Generating Questions
+def questions(timesTable):
+    
+    for question in range(1,16):
+        num1 = get_questions(timesTable)
+        num2 = random.randrange(2,13)
+        answer = num1 * num2
+        userAnswer = input(str(num1) + 'x' + str(num2) + " = ")
+        userAnswer = int(userAnswer)
+        verdict(userAnswer,answer)
+
+
+
+
+#Main
+timesTable = get_questions(timesTable)
