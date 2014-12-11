@@ -9,7 +9,7 @@
 
 def customerDetails():
     userTitle, firstName, lastName = gettingCustomerName()
-
+    
 
 #The getting of users identity
 def gettingCustomerName():
@@ -19,25 +19,29 @@ def gettingCustomerName():
     lastName = title(lastName)
     userTitle = input("Your Title: ")
     userTitle = capitalise(title)
+    print(firstName, lastName, userTitle)
     return firstName, lastName, userTitle
 
 
-def customerAddress():
+def gettingCustomerAddress():
     houseno = input("Enter your house number: ")
     st = input("Enter your Street name: ")
+    st = msg.title(st)
     twn = input("Enter your Town: ")
-    twn = capitalise(twn)
-    pc = input(Enter)
-    return hn, st, twn
+    twn = msg.capitalise(twn)
+    pc = input("Enter your Post Code:")
+    pc = msg.upper(pc)
+    return houseno, st, twn, pc
 
-def personalisedMsg(firstName, lastName):
-    personalGreeting = ("Hello {0} {1}".format(userTitle, lastName))
+def personalisedMsg(userTitle, lastName):
+    personalGreeting = print("Hello {0} {1}".format(userTitle, lastName))
     return personalGreeting
 
+#main program
 def main():
-    
     msg = personalisedMsg(personalGreeting)
+    print("Your site greeting will be:")
     print(msg)
-    
+     
 
 
