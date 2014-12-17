@@ -1,0 +1,3 @@
+msg = input("Enter the message: ")
+msg.upper()
+print(msg)
