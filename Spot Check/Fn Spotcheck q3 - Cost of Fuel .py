@@ -1,22 +1,29 @@
-print("Calculates the cost of fuel of your next Journey")
+print("This Program:")
+print("Calculates the fuel cost of your next journey")
 
+#get values from user
 def getValues():
-    d = input("Journey Distance (in Miles): ")
-    d = int(d)
+    distance = input("Journey distance (in Miles): ")
+    distance = float(distance)
     Mpg = input("Miles Per Gallon: ")
-    Mpg = int(Mpg)
+    Mpg = float(Mpg)
     p = input("Price of Petrol (In Pence): ")
-    p = int(p)
-    return d, Mpg, p
+    p = float(p)
+    return distance, Mpg, p
 
-def CalculateCost(d, Mpg, p):
-    Mpg = Mpg * 4.55
+def calculateCost(distance, Mpg, p):
+    valid = False
+    Mpg = Mpg / 4.55
     #fuel needed in litres
-    FuelNeeded  = Mpg * d
-    FuelCost = (FuelNeeded  * p) / 100
+    fuelNeeded = Mpg * distance
+    fuelCost = (fuelNeeded * p) / 100
     print(fuel)
-    return FuelNeeded, FuelCost
+##    if fuel =
+    return fuelNeeded, fuelCost
 
-def main():
-    Cost = CalculateCost(FuelNeeded, FuelCost)
-    print(Cost)
+##the test
+def theCheck():
+    valid = False
+    while valid == False:
+        cost = calculateCost(distance, Mpg, p)
+        print(cost)
